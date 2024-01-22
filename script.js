@@ -68,6 +68,7 @@ function resetGame() {
     history = [];
     document.getElementById('answer-group').style.display = 'none';
     document.getElementById('Success').style.display = 'none';
+    document.getElementById('notes-input').value = '';
 }
 
 function showAnswer(success = false) {
