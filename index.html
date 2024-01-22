@@ -12,24 +12,24 @@
 
     <!-- "Answer : " + answer -->
     <div>
-        Answer : <span id="answer"></span>
+        Answer : <text id="answer"></text>
+        <br>
     </div>
 
     <div>
-        History :
-        <span id="history"></span>
+        History : <br>
+        <div id="history"></div>
     </div>
 
     <input type="text" id="guessInput" placeholder="Enter four unique digits (1-9)">
     <div>
-        Result : <span id="result"></span>
+        Result : <text id="result"></text>
     </div>
 
-    <button onclick="evaluateGuess()">Guess</button>
-    <button onclick="resetGame()">Reset</button>
-    <button onclick="showAnswer()">Show Answer</button>
-
-    <button id="showExplanation" onclick="explanation()">Show Explanation</button>
+    <button class="guess-button" onclick="evaluateGuess()">Guess</button>
+    <button class="reset-button" onclick="resetGame()">Reset</button>
+    <button class="show-answer-button" onclick="showAnswer()">Show Answer</button>
+    <button class="show-explanation-button" onclick="explanation()">Show Explanation</button>
 </div>
 
 <script src="script.js"></script>
