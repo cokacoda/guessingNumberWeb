@@ -26,10 +26,11 @@ function evaluateGuess() {
         }
     }
     document.getElementById('result').innerText = `${A}A${B}B`;
+    history.push({guess: guess.join(''), result: `${A}A${B}B`});
     showHistory();
     if (A === 4) {
-        document.getElementById('result').innerText = 'Correct!';
-        showAnswer();
+        // document.getElementById('result').innerText = 'Correct!';
+        showAnswer(true);
     }
 }
 
@@ -60,25 +61,36 @@ function resetGame() {
     document.getElementById('guessInput').value = '';
     document.getElementById('result').innerText = '';
     document.getElementById('answer').innerText = '';
-    document.getElementById('history').innerText = '';
+    let historyList = document.getElementById('historyList');
+    while (historyList.firstChild) {
+        historyList.removeChild(historyList.firstChild);
+    }
+    history = [];
+    document.getElementById('answer-group').style.display = 'none';
+    document.getElementById('Success').style.display = 'none';
 }
 
-function showAnswer() {
+function showAnswer(success = false) {
     document.getElementById('answer').innerText = answer.join('');
+    document.getElementById('answer-group').style.display = 'block';
+    if (success) {
+        document.getElementById('Success').style.display = 'block';
+    }
 }
 
 function showHistory() {
-    let historyList = document.getElementById('history');
-    let historyItem = document.createElement('li');
-    // new item contains the guess input and the result
-    historyItem.innerText = document.getElementById('guessInput').value + '\t' + document.getElementById('result').innerText;
+    let historyList = document.getElementById('historyList'); // table
+    // left column is the guess, right column is the result
+    let historyItem = document.createElement('tr');
+    let guess = document.createElement('td');
+    guess.innerText = history[history.length - 1].guess;
+    let result = document.createElement('td');
+    result.innerText = history[history.length - 1].result;
+    historyItem.appendChild(guess);
+    historyItem.appendChild(result);
     historyList.appendChild(historyItem);
-    history.push(historyItem);
 }
 
-function explanation() {
-    alert(explanation_text);
-}
 
 // Event listener for document ready to set up the click handlers
 document.addEventListener("DOMContentLoaded", function() {
@@ -101,3 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function autoResizeTextarea() {
+    var textArea = document.getElementById("notes-input");
+    textArea.style.height = 'auto'; // Reset the height
+    textArea.style.height = textArea.scrollHeight + 'px'; // Adjust the height based on the content
+}

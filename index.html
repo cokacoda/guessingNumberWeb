@@ -10,6 +10,17 @@
 <div id="gameContainer">
     <h1>Number Guessing Game</h1>
 
+    <section id="historySection">
+        <h2>History</h2>
+        <!-- List structure for history -->
+        <table id="historyList"></table>
+    </section>
+
+    <div id="notes-section">
+        <h2>Notes</h2>
+        <textarea id="notes-input" placeholder="Enter your thoughts here..." oninput="autoResizeTextarea()"></textarea>
+    </div>
+
     <section id="gameSection">
         <fieldset>
             <legend>Your Guess</legend>
@@ -23,16 +34,16 @@
         </fieldset>
     </section>
 
-    <section id="resultSection">
-
+    <section id="answerSection">
+        <div id="answer-group" style="display: none">
+            <h2>Answer</h2>
+            <div id="answer"></div>
+            <h3 id="Success" style="display: none"> Success!</h3>
+        </div>
+        <button class="show-answer-button" onclick="showAnswer()">Show Answer</button>
     </section>
 
-    <section id="historySection">
-        <h2>History</h2>
-        <div id="history"></div>
-    </section>
 
-    <button class="show-answer-button" onclick="showAnswer()">Show Answer</button>
     <button class="reset-button" onclick="resetGame()">New Game</button>
 
     <!--
