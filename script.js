@@ -1,6 +1,8 @@
 let answer = generateNumbers();
 let history = [];
 
+let explanation_text = 'The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B).'
+
 function generateNumbers() {
     let numbers = [];
     while (numbers.length < 4) {
@@ -75,5 +77,27 @@ function showHistory() {
 }
 
 function explanation() {
-    alert('The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B).');
+    alert(explanation_text);
 }
+
+// Event listener for document ready to set up the click handlers
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all the toggle buttons or elements
+    var toggles = document.querySelectorAll('.toggle-explanation');
+
+    // Add click event listener for each toggle
+    toggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            // Find the next sibling explanation element
+            var explanation = this.nextElementSibling;
+
+            // Check if the explanation is currently shown
+            if (explanation.style.display === 'none' || explanation.style.display === '') {
+                explanation.style.display = 'block'; // Show it
+            } else {
+                explanation.style.display = 'none'; // Hide it
+            }
+        });
+    });
+});
+

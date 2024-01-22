@@ -10,26 +10,43 @@
 <div id="gameContainer">
     <h1>Number Guessing Game</h1>
 
-    <!-- "Answer : " + answer -->
-    <div>
-        Answer : <text id="answer"></text>
-        <br>
-    </div>
+    <section id="gameSection">
+        <fieldset>
+            <legend>Your Guess</legend>
+            <input type="text" id="guessInput" placeholder="Enter four unique digits (1-9)">
+            <div id="buttons">
+                <button class="guess-button" onclick="evaluateGuess()">Guess</button>
+            </div>
 
-    <div>
-        History : <br>
+            <h2>Result</h2>
+            <div id="result"></div>
+        </fieldset>
+    </section>
+
+    <section id="resultSection">
+
+    </section>
+
+    <section id="historySection">
+        <h2>History</h2>
         <div id="history"></div>
-    </div>
+    </section>
 
-    <input type="text" id="guessInput" placeholder="Enter four unique digits (1-9)">
-    <div>
-        Result : <text id="result"></text>
-    </div>
-
-    <button class="guess-button" onclick="evaluateGuess()">Guess</button>
-    <button class="reset-button" onclick="resetGame()">Reset</button>
     <button class="show-answer-button" onclick="showAnswer()">Show Answer</button>
+    <button class="reset-button" onclick="resetGame()">New Game</button>
+
+    <!--
     <button class="show-explanation-button" onclick="explanation()">Show Explanation</button>
+    -->
+
+    <!-- Sample structure for clickable text and its explanation -->
+    <div class="explanation-group">
+        <button class="toggle-explanation">Click for Explanation</button>
+        <p class="explanation" style="display: none;">
+            The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B).
+        </p>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
