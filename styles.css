@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: auto;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
@@ -14,6 +18,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow-y: auto;
 }
 
 #gameContainer {
@@ -212,3 +217,11 @@ li {
     overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
+/* Github Link at the bottom, with relative positioning, a hover effect and adaptive sizing */
+#github-icon {
+    position: relative;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    transition: transform 1s;
+}

@@ -1,7 +1,7 @@
 let answer = generateNumbers();
 let history = [];
 
-let explanation_text = 'The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B).'
+let explanation_text = 'The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B). \n For example, if the answer is 1234 and the guess is 1356, the game will return 1A1B. Because 1 is in the correct position and 3 is in the wrong position.'
 
 function generateNumbers() {
     let numbers = [];
@@ -117,5 +117,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function autoResizeTextarea() {
     var textArea = document.getElementById("notes-input");
     textArea.style.height = 'auto'; // Reset the height
-    textArea.style.height = textArea.scrollHeight + 'px'; // Adjust the height based on the content
+    var newHeight = textArea.scrollHeight + 'px'; // Calculate the new height
+    if (textArea.clientHeight < textArea.scrollHeight) {
+        textArea.style.height = newHeight; // Only expand if the new height is greater
+    }
 }
