@@ -22,32 +22,32 @@
 }
 
 /* Darker Button color in nighr mode*/
-.night-mode .guess-button {
+.night-mode #guess-button {
     /* Darker green background for buttons */
     background: #345e3f;
 }
 
-.night-mode .guess-button:hover {
+.night-mode #guess-button:hover {
     /* Darker green hover effect for buttons */
     background: #2c5138;
 }
 
-.night-mode .show-answer-button {
+.night-mode #show-answer-button {
     /* Darker orange background for buttons */
     background: #5a4e2c;
 }
 
-.night-mode .show-answer-button:hover {
+.night-mode #show-answer-button:hover {
     /* Darker orange hover effect for buttons */
     background: #4e4428;
 }
 
-.night-mode .reset-button {
+.night-mode #reset-button {
     /* Darker red background for buttons */
     background: #5e2c2c;
 }
 
-.night-mode .reset-button:hover {
+.night-mode #reset-button:hover {
     /* Darker red hover effect for buttons */
     background: #512828;
 }
