@@ -4,67 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/night.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/component.css">
 </head>
 <body>
 <div id="gameContainer">
     <h1>Number Guessing Game</h1>
 
-    <section id="historySection">
+    <section id="history-section">
         <h2>History</h2>
         <!-- List structure for history -->
-        <table id="historyList"></table>
+        <table id="history-table"></table>
     </section>
 
     <div id="notes-section">
         <h2>Notes</h2>
-        <textarea id="notes-input" placeholder="Enter your thoughts here..." oninput="autoResizeTextarea()"></textarea>
+        <textarea class="input-class" id="notes-input" placeholder="Enter your thoughts here..." oninput="autoResizeTextarea()"></textarea>
     </div>
 
-    <section id="gameSection">
+    <section id="game-section">
         <fieldset>
             <legend>Your Guess</legend>
-            <input type="text" id="guessInput" placeholder="Enter four unique digits (1-9)">
-            <div id="buttons">
-                <button class="guess-button" onclick="evaluateGuess()">Guess</button>
+            <input class="input-class" type="number" id="guess-input" placeholder="Enter four unique digits (1-9)">
+            <div>
+                <button id="guess-button" onclick="evaluateGuess()">Guess</button>
             </div>
 
             <h2>Result</h2>
-            <div id="result"></div>
+            <div id="result-div"></div>
         </fieldset>
     </section>
 
-    <section id="answerSection">
-        <div id="answer-group" style="display: none">
+    <section id="answer-section">
+        <div id="answer-div" style="display: none">
             <h2>Answer</h2>
-            <div id="answer"></div>
-            <h3 id="Success" style="display: none"> Success!</h3>
+            <div id="answer-subdiv"></div>
+            <h3 id="success-text" style="display: none"> Success!</h3>
         </div>
-        <button class="show-answer-button" onclick="showAnswer()">Show Answer</button>
+        <button id="show-answer-button" onclick="showAnswer()">Show Answer</button>
     </section>
 
 
-    <button class="reset-button" onclick="resetGame()">New Game</button>
+    <button id="reset-button" onclick="resetGame()">New Game</button>
 
-    <!--
-    <button class="show-explanation-button" onclick="explanation()">Show Explanation</button>
-    -->
 
     <!-- Sample structure for clickable text and its explanation -->
-    <div class="explanation-group">
-        <button class="toggle-explanation">Click for Explanation</button>
-        <p class="explanation" style="display: none;">
+    <div id="explanation-div">
+        <button id="show-explanation-button">Show Explanation</button>
+        <p id="explanation-text" style="display: none;">
             The game is played by guessing a 4-digit number without zero and duplicate digits. For each guess, the game will return the number of correct digits in the correct position (A) and the number of correct digits in the wrong position (B). <br>
             For example, if the answer is 1234 and the guess is 1356, the game will return 1A1B. Because 1 is in the correct position and 3 is in the wrong position.
         </p>
     </div>
 
+    <!-- Title bar with a toggle button to switch between light and dark mode -->
+    <div class="title-bar">
+        <button id="theme-toggle-button" class="theme-toggle-button">
+            <img src="src/img/sun-icon.png" id="sun-icon" alt="Light Mode">
+            <img src="src/img/moon-icon.png" id="moon-icon" alt="Dark Mode" hidden>
+        </button>
+    </div>
+
     <!-- At the right bottom corner, show the GitHub icon, which links to the GitHub repository of this project. -->
     <a href="https://github.com/cokacoda/guessingNumberWeb" target="_blank">
-        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" id="github-icon">
+        <img src="src/img/github-mark.png" alt="GitHub" id="github-href">
     </a>
 </div>
 
-<script src="script.js"></script>
+<script src="src/js/gameLogic.js"></script>
+<script src="src/js/style.js"></script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+/* Individual button styling */
+#guess-button {
+    background: #5cb85c; /* Green */
+}
+
+#guess-button:hover {
+    background: #4cae4c;
+}
+
+#show-answer-button {
+    background: #f0ad4e; /* Orange */
+}
+
+#show-answer-button:hover {
+    background: #ec971f;
+}
+
+#reset-button {
+    background: #d9534f; /* Red */
+}
+
+#reset-button:hover {
+    background: #c9302c;
+}
+
+#show-explanation-button {
+    background: #5bc0de; /* Blue */
+}
+
+#show-explanation-button:hover {
+    background: #46b8da;
+}

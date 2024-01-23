@@ -1,0 +1,90 @@
+/* Night mode styles */
+.night-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1; /* Light text */
+}
+
+.night-mode h1 {
+    color: #ecf0f1; /* Light text */
+}
+
+.night-mode .button-class {
+    background-color: #34495e; /* Darker background for buttons */
+    color: #ecf0f1; /* Light text for buttons */
+}
+
+.night-mode #gameContainer {
+    background-color: #34495e; /* 适当的夜间模式背景色 */
+}
+
+.night-mode #theme-toggle-button {
+    color: #ecf0f1; /* Light text */
+}
+
+/* Darker Button color in nighr mode*/
+.night-mode .guess-button {
+    /* Darker green background for buttons */
+    background: #345e3f;
+}
+
+.night-mode .guess-button:hover {
+    /* Darker green hover effect for buttons */
+    background: #2c5138;
+}
+
+.night-mode .show-answer-button {
+    /* Darker orange background for buttons */
+    background: #5a4e2c;
+}
+
+.night-mode .show-answer-button:hover {
+    /* Darker orange hover effect for buttons */
+    background: #4e4428;
+}
+
+.night-mode .reset-button {
+    /* Darker red background for buttons */
+    background: #5e2c2c;
+}
+
+.night-mode .reset-button:hover {
+    /* Darker red hover effect for buttons */
+    background: #512828;
+}
+
+.night-mode #show-explanation-button {
+    /* Darker blue background for buttons */
+    background: #2c3e50;
+}
+
+.night-mode #show-explanation-button:hover {
+    /* Darker blue hover effect for buttons */
+    background: #263747;
+}
+
+/* Darker background color for history table in night mode */
+.night-mode #history-table tr:nth-child(even){background-color: #34495e;}
+
+/* Darker border color for input fields in night mode */
+.night-mode .input-class {
+    background-color: #34495e; /* 输入框的夜间模式背景色 */
+    color: #ecf0f1; /* 输入框的夜间模式文字颜色 */
+    border-color: #1abc9c; /* 如需，可调整边框颜色 */
+    /* 你可以添加更多样式，例如内边距、外边距、字体等 */
+}
+
+.night-mode #notes-input {
+    background-color: #34495e; /* 输入框的夜间模式背景色 */
+    color: #ecf0f1; /* 输入框的夜间模式文字颜色 */
+    border-color: #1abc9c; /* 如需，可调整边框颜色 */
+    /* 你可以添加更多样式，例如内边距、外边距、字体等 */
+}
+
+.night-mode #result-div {
+    color: #ecf0f1; /* 夜间模式文字颜色 */
+    background-color: #34495e; /* 夜间模式背景色 */
+}
+
+.night-mode #explanation-text {
+    color: #ecf0f1; /* 夜间模式文字颜色 */
+}
